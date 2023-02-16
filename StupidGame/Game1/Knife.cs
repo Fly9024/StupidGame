@@ -6,22 +6,13 @@ using System.Threading.Tasks;
 
 namespace StudidGame.Game1
 {
-    internal class Knife
+    internal class Knife:Weapon
     {
-       public string name;
-        double damage;
-        double cost;
-        double distance;
-
-        public Knife(string name, double damage, double cost, double distance)
+        public Knife(string name, double damage, double cost, double distance) : base(name, damage, cost, distance)
         {
-            this.name = name;
-            this.damage = damage;
-            this.cost = cost;
-            this.distance = distance;
         }
 
-        public void attack()
+        public override void attack()
         {
             Console.WriteLine("Вжух-вжух");
         }

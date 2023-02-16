@@ -6,66 +6,61 @@ using System.Threading.Tasks;
 
 namespace StudidGame.Game1
 {
-    internal class Rifle
+    internal class Rifle:Weapon
     {
-        public string name;
-        double damage;
-        double cost;
-        double distance;
+       
         bool personType=false;
-       public bool PersonType { get { return personType; } }
 
-        public Rifle(string name, double damage, double cost, double distance)
+        public Rifle(string name, double damage, double cost, double distance) : base(name, damage, cost, distance)
         {
-            this.name = name;
-            this.damage = damage;
-            this.cost = cost;
-            this.distance = distance;
         }
 
+        public bool PersonType { get { return personType; } }
+
+       
         public double Cost { get => cost;}
 
-        public void attack()
+        public override void attack()
         {
             Console.WriteLine("Тра-та-та");
         }
 
-        public static bool operator >(Rifle r1, Rifle r2)
-        {
-            if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
-                return true;
-            else return false;
-        }
-        public static bool operator <(Rifle r1, Rifle r2)
-        {
-            if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
-                return false;
-            else return true;
-        }
-        public static bool operator >(Rifle r1, Pistol r2)
-        {
-            if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
-                return true;
-            else return false;
-        }
-        public static bool operator <(Rifle r1, Pistol r2)
-        {
-            if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
-                return false;
-            else return true;
-        }
-         public static bool operator >( Pistol r2, Rifle r1)
-        {
-            if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
-                return true;
-            else return false;
-        }
-        public static bool operator <(Pistol r2, Rifle r1)
-        {
-            if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
-                return false;
-            else return true;
-        }
+        //public static bool operator >(Rifle r1, Rifle r2)
+        //{
+        //    if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
+        //        return true;
+        //    else return false;
+        //}
+        //public static bool operator <(Rifle r1, Rifle r2)
+        //{
+        //    if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
+        //        return false;
+        //    else return true;
+        //}
+        //public static bool operator >(Rifle r1, Pistol r2)
+        //{
+        //    if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
+        //        return true;
+        //    else return false;
+        //}
+        //public static bool operator <(Rifle r1, Pistol r2)
+        //{
+        //    if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
+        //        return false;
+        //    else return true;
+        //}
+        // public static bool operator >( Pistol r2, Rifle r1)
+        //{
+        //    if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
+        //        return true;
+        //    else return false;
+        //}
+        //public static bool operator <(Pistol r2, Rifle r1)
+        //{
+        //    if ((r1.distance + r1.damage) / 2 > (r2.distance + r2.damage) / 2)
+        //        return false;
+        //    else return true;
+        //}
 
        public static explicit operator Knife(Rifle rifle)
         {

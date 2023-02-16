@@ -47,6 +47,7 @@
     <Compile Include="Game1\Person.cs" />
     <Compile Include="Game1\Pistol.cs" />
     <Compile Include="Game1\Rifle.cs" />
+    <Compile Include="Game1\Weapon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
